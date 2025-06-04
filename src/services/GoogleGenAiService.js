@@ -1,6 +1,6 @@
 import { GoogleGenAI } from '@google/genai';
 
-const googleGenAi = new GoogleGenAI({ apiKey: import.meta.env.VITE_GOGGLE_AI_API_KEY });
+const googleGenAi = new GoogleGenAI({ apiKey: import.meta.env.VITE_GOGGLE_GEN_AI_API_KEY });
 
 export default class GoogleGenAIService {
   #chat;
