@@ -2,10 +2,12 @@ import { useState } from 'react';
 import styles from './App.module.css';
 import { Chat } from './components/Chat/Chat';
 import { Controls } from './components/Controls/Controls';
-import GoogleGenAIService from './services/GoogleGenAiService';
+// import GoogleGenAIService from './services/GoogleGenAIService';
+import OpenAIService from './services/OpenAIService';
 
 function App() {
-  const googleGenAIService = new GoogleGenAIService();
+  // const googleGenAIService = new GoogleGenAIService();
+  const openAIService = new OpenAIService();
 
   const [messages, setMessages] = useState([]);
 
@@ -17,7 +19,8 @@ function App() {
     addMessage({ content, role: 'user' });
 
     try {
-      const result = await googleGenAIService.chat(content);
+      // const result = await googleGenAIService.chat(content);
+      const result = await openAIService.chat(content, messages);
       addMessage({ content: result, role: 'assistant' });
     } catch (error) {
       addMessage({

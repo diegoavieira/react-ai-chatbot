@@ -1,12 +1,12 @@
 import { GoogleGenAI } from '@google/genai';
 
-const googleGenAi = new GoogleGenAI({ apiKey: import.meta.env.VITE_GOGGLE_GEN_AI_API_KEY });
+const googleGenAI = new GoogleGenAI({ apiKey: import.meta.env.VITE_GOGGLE_GEN_AI_API_KEY });
 
 export default class GoogleGenAIService {
   #chat;
 
   constructor(model = 'gemini-1.5-flash') {
-    this.#chat = googleGenAi.chats.create({ model, history: [] });
+    this.#chat = googleGenAI.chats.create({ model, history: [] });
   }
 
   async chat(content) {
