@@ -2,7 +2,7 @@ import { GoogleGenAI } from '@google/genai';
 
 const googleGenAI = new GoogleGenAI({ apiKey: import.meta.env.VITE_GOGGLE_GEN_AI_API_KEY });
 
-export default class GoogleGenAIService {
+export class GoogleGenAIService {
   #chat;
 
   constructor(model = 'gemini-1.5-flash') {
