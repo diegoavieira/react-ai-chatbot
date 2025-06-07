@@ -31,6 +31,7 @@ export function Controls({ onSend }) {
           value={content}
           onChange={handleContentChange}
           onKeyDown={handleEnterPress}
+          autoFocus
         />
       </div>
       <button className={styles.Button} onClick={handleContentSend}>
